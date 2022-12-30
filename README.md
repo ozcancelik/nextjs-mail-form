@@ -1,8 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js contact form with nodemailer, React Hook Form, Zod, Tailwind CSS, reCAPTCHA, Handlebars with TypeScript
 
-## Getting Started
+### This is a template for a contact form with Next.js with nodemailer, React Hook Form, Zod, Tailwind CSS and TypeScript. It uses a custom server to send the email and validate the form. It also uses reCAPTCHA to prevent spam. Handlebars is used to create the email template.
 
-First, run the development server:
+## Demo
+
+...coming soon
+
+## Features
+
+- [x] [Next.js](https://nextjs.org/)
+- [x] Custom server: You can run with different port. It's useful for same server with other apps.
+- [x] [Nodemailer](https://nodemailer.com/)
+- [x] [React Hook Form](https://react-hook-form.com/)
+- [x] [Zod](https://zod.dev)
+- [x] [reCAPTCHA with react-google-recaptcha](https://github.com/dozoisch/react-google-recaptcha)
+      More info about reCAPTCHA: https://developers.google.com/recaptcha/docs/display
+- [x] Email templating with Handlebars. https://github.com/yads/nodemailer-express-handlebars
+- [x] [TypeScript](https://www.typescriptlang.org/)
+- [x] CSS with [Tailwind CSS](https://tailwindcss.com/)
+
+## How to use
+
+### Prerequisites
+
+- Clone the repository and install the dependencies.
+- Create a `.env` file or change the name of `.env.example` to `.env` and fill the variables.
+
+```bash
+SERVER_PORT=
+CONTACT_FORM_SEND_EMAIL=
+CONTACT_FORM_RECEIVE_EMAIL=
+CONTACT_FORM_PASS=
+CONTACT_FORM_HOST=
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=
+RECAPTCHA_SECRET_KEY=
+```
+
+### Install dependencies
+
+```bash
+npm install
+# or
+yarn
+```
+
+### Run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +52,27 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build the app
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+# or
+yarn build
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Run the production server:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+npm run start
+# or
+yarn start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Notes
 
-## Learn More
+- You can change the server port in `.env` file. If empty, it will use the default port 3000.
+- If you have problems with Nodemailer, you can try to change the port or other settings. You can find more info in the Nodemailer documentation. More info: https://nodemailer.com/smtp/
+- Gmail requires you to enable "Less secure app access" in your account settings. More info: https://nodemailer.com/usage/using-gmail/
+- For the reCAPTCHA to work, you need to add the domain to the reCAPTCHA admin panel.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Tested with Node.js v18.12.1.
