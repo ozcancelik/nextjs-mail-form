@@ -36,13 +36,14 @@ export default function Form() {
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      nameSurname: "John Doe",
-      email: "john@joe.com",
-      phone: "5555555555",
-      message:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod",
-    },
+    // You can set default values for the form here for testing purposes
+    // defaultValues: {
+    //   nameSurname: "John Doe",
+    //   email: "john@joe.com",
+    //   phone: "5555555555",
+    //   message:
+    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod",
+    // },
   });
   const processForm = async (data: FormData) => {
     const token = await recaptchaRef?.current?.executeAsync();
@@ -79,8 +80,8 @@ export default function Form() {
     <form className="w-full" onSubmit={handleSubmit(processForm)} noValidate>
       <div className="mb-4">
         <input
-          className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:outline-none focus:shadow-outline
-          ${errors.nameSurname?.message && "border-red-500"}
+          className={`shadow appearance-none outline-none border rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:shadow-md duration-300
+          ${errors.nameSurname?.message && "border-2 border-red-500"}
           `}
           type="text"
           placeholder="Full name"
@@ -94,8 +95,8 @@ export default function Form() {
       </div>
       <div className="mb-4">
         <input
-          className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:outline-none focus:shadow-outline
-          ${errors.email?.message && "border-red-500"}
+          className={`shadow appearance-none outline-none border-2 rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:shadow-md duration-300
+          ${errors.email?.message && "border-2 border-red-500"}
           `}
           type="email"
           placeholder="Email"
@@ -107,8 +108,8 @@ export default function Form() {
       </div>
       <div className="mb-4">
         <input
-          className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:outline-none focus:shadow-outline
-          ${errors.phone?.message && "border-red-500"}
+          className={`shadow appearance-none outline-none border rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:shadow-md duration-300
+          ${errors.phone?.message && "border-2 border-red-500"}
           `}
           type="tel"
           placeholder="Phone"
@@ -120,8 +121,8 @@ export default function Form() {
       </div>
       <div className="mb-4">
         <textarea
-          className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:outline-none focus:shadow-outline
-          ${errors.message?.message && "border-red-500"}
+          className={`shadow appearance-none outline-none border rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:shadow-md duration-300
+          ${errors.message?.message && "border-2 border-red-500"}
           `}
           placeholder="Message"
           rows={5}
@@ -139,11 +140,13 @@ export default function Form() {
           hl="en"
         />
       </div>
-      <div className="flex items-center justify-between">
+      <div className="flex gap-10 items-center justify-between">
         <button
           className={`${
-            isSubmitting ? "opacity-50" : "opacity-100"
-          } bg-black hover:bg-gray-700 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline`}
+            isSubmitting
+              ? "opacity-50 cursor-not-allowed"
+              : "opacity-100 cursor-pointer"
+          } bg-black hover:bg-gray-700 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline duration-300`}
           type="submit"
           disabled={isSubmitting}
           onClick={handleSubmit(processForm)}
@@ -151,7 +154,9 @@ export default function Form() {
           {isSubmitting ? "Sending..." : "Send"}
         </button>
 
-        {isSubmitSuccessful && <div className={resultColor}>{result}</div>}
+        {isSubmitSuccessful && (
+          <div className={`text-right ${resultColor}`}>{result}</div>
+        )}
       </div>
     </form>
   );
