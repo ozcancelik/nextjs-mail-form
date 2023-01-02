@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
+import { FiMail, FiPhone, FiUser } from "react-icons/fi";
 
 const formSchema = z.object({
   nameSurname: z.string().min(1, { message: "Full name is required" }),
@@ -79,57 +80,84 @@ export default function Form() {
   return (
     <form className="w-full" onSubmit={handleSubmit(processForm)} noValidate>
       <div className="mb-4">
-        <input
-          className={`shadow appearance-none outline-none border rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:shadow-md duration-300
-          ${errors.nameSurname?.message && "border-2 border-red-500"}
+        <div className="relative">
+          {errors.nameSurname?.message ? (
+            <FiUser className="w-6 h-6 absolute top-1/2 -translate-y-1/2 left-2 border-r pr-2 text-red-500" />
+          ) : (
+            <FiUser className="w-6 h-6 absolute top-1/2 -translate-y-1/2 left-2 border-r pr-2" />
+          )}
+          <input
+            className={`shadow appearance-none outline-none border rounded w-full py-2 pl-10 text-gray-700 leading-tight duration-300
+          ${errors.nameSurname?.message && "shadow-[0_0_0_2px] shadow-red-500"}
           `}
-          type="text"
-          placeholder="Full name"
-          {...register("nameSurname")}
-        />
+            type="text"
+            placeholder="Full name"
+            {...register("nameSurname")}
+          />
+        </div>
         {errors.nameSurname?.message && (
-          <div className="text-red-500 text-xs">
+          <div className="text-red-500 text-xs mt-1">
             {errors.nameSurname?.message}
           </div>
         )}
       </div>
       <div className="mb-4">
-        <input
-          className={`shadow appearance-none outline-none border-2 rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:shadow-md duration-300
-          ${errors.email?.message && "border-2 border-red-500"}
+        <div className="relative">
+          {errors.email?.message ? (
+            <FiMail className="w-6 h-6 absolute top-1/2 -translate-y-1/2 left-2 border-r pr-2 text-red-500" />
+          ) : (
+            <FiMail className="w-6 h-6 absolute top-1/2 -translate-y-1/2 left-2 border-r pr-2" />
+          )}
+          <input
+            className={`shadow appearance-none outline-none border rounded w-full py-2 pl-10 text-gray-700  leading-tight duration-300
+          ${errors.email?.message && "shadow-[0_0_0_2px] shadow-red-500"}
           `}
-          type="email"
-          placeholder="Email"
-          {...register("email")}
-        />
+            type="email"
+            placeholder="Email"
+            {...register("email")}
+          />
+        </div>
         {errors.email?.message && (
-          <div className="text-red-500 text-xs">{errors.email?.message}</div>
+          <div className="text-red-500 text-xs mt-1">
+            {errors.email?.message}
+          </div>
         )}
       </div>
       <div className="mb-4">
-        <input
-          className={`shadow appearance-none outline-none border rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:shadow-md duration-300
-          ${errors.phone?.message && "border-2 border-red-500"}
+        <div className="relative">
+          {errors.phone?.message ? (
+            <FiPhone className="w-6 h-6 text-red-500 absolute top-1/2 -translate-y-1/2 left-2 border-r pr-2" />
+          ) : (
+            <FiPhone className="w-6 h-6 absolute top-1/2 -translate-y-1/2 left-2 border-r pr-2" />
+          )}
+          <input
+            className={`shadow appearance-none outline-none border rounded w-full py-2 pl-10 text-gray-700 leading-tight duration-300
+          ${errors.phone?.message && "shadow-[0_0_0_2px] shadow-red-500"}
           `}
-          type="tel"
-          placeholder="Phone"
-          {...register("phone")}
-        />
+            type="tel"
+            placeholder="Phone"
+            {...register("phone")}
+          />
+        </div>
         {errors.phone?.message && (
-          <div className="text-red-500 text-xs">{errors.phone?.message}</div>
+          <div className="text-red-500 text-xs mt-1">
+            {errors.phone?.message}
+          </div>
         )}
       </div>
       <div className="mb-4">
         <textarea
-          className={`shadow appearance-none outline-none border rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:shadow-md duration-300
-          ${errors.message?.message && "border-2 border-red-500"}
+          className={`shadow appearance-none outline-none border rounded w-full py-2 px-3 text-gray-700 leading-tight duration-300
+          ${errors.message?.message && "shadow-[0_0_0_2px] shadow-red-500"}
           `}
           placeholder="Message"
           rows={5}
           {...register("message")}
         ></textarea>
         {errors.message?.message && (
-          <div className="text-red-500 text-xs">{errors.message?.message}</div>
+          <div className="text-red-500 text-xs mt-1">
+            {errors.message?.message}
+          </div>
         )}
       </div>
       <div>

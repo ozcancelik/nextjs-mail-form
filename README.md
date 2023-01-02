@@ -1,10 +1,10 @@
 # Next.js contact form with nodemailer, React Hook Form, Zod, Tailwind CSS, reCAPTCHA, Handlebars with TypeScript
 
-### This is a template for a contact form with Next.js with nodemailer, React Hook Form, Zod, Tailwind CSS and TypeScript. It uses a custom server to send the email and validate the form. It also uses reCAPTCHA to prevent spam. Handlebars is used to create the email template.
+### This is a template for a contact form with Next.js. It uses a custom server to send the email and validate the form. It also uses reCAPTCHA to prevent spam. Handlebars is used to create the email template.
 
 ## Demo
 
-...coming soon
+...
 
 ## Features
 
