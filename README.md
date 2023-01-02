@@ -18,6 +18,7 @@
 - [x] Email templating with Handlebars. https://github.com/yads/nodemailer-express-handlebars
 - [x] [TypeScript](https://www.typescriptlang.org/)
 - [x] CSS with [Tailwind CSS](https://tailwindcss.com/)
+- [x] Icons with [React Icons](https://react-icons.github.io/react-icons/)
 
 ## How to use
 
