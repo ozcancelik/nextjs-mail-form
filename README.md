@@ -4,7 +4,7 @@
 
 ## Demo
 
-...
+https://nextjs-mail-form-ozcancelik.vercel.app/
 
 ## Features
 
@@ -13,7 +13,7 @@
 - [x] [Nodemailer](https://nodemailer.com/)
 - [x] [React Hook Form](https://react-hook-form.com/)
 - [x] [Zod](https://zod.dev)
-- [x] [reCAPTCHA with react-google-recaptcha](https://github.com/dozoisch/react-google-recaptcha)
+- [x] [reCAPTCHA with react-google-recaptcha](https://github.com/dozoisch/react-google-recaptcha) It uses the invisible reCAPTCHA v2.
       More info about reCAPTCHA: https://developers.google.com/recaptcha/docs/display
 - [x] Email templating with Handlebars. https://github.com/yads/nodemailer-express-handlebars
 - [x] [TypeScript](https://www.typescriptlang.org/)

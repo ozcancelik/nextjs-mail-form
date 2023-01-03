@@ -23,8 +23,7 @@ export default function Home() {
             You can find the code for this example{" "}
             <Link
               className="font-bold underline"
-              href="
-            https://github.com/ozcancelik/nextjs-mail-form"
+              href="https://github.com/ozcancelik/nextjs-mail-form"
               target={"_blank"}
             >
               here
