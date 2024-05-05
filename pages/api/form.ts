@@ -47,10 +47,10 @@ export default async function ContactApi(
     transporter.use("compile", hbs(handlebarOptions));
     try {
         await transporter.sendMail({
-            from: `${nameSurname} ${email}`,
+            from: `Website Contact Form ${process.env.CONTACT_FORM_SEND_EMAIL}`,
             replyTo: email,
             to: process.env.CONTACT_FORM_RECEIVE_EMAIL,
-            subject: `Contact form from - ${nameSurname}`,
+            subject: `A form from - ${nameSurname}`,
             // @ts-ignore-next-line
             template: "contact", //
             context: {
