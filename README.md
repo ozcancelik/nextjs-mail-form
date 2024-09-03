@@ -78,4 +78,4 @@ yarn start
 - Gmail requires you to enable "Less secure app access" in your account settings. More info: https://nodemailer.com/usage/using-gmail/
 - For the reCAPTCHA to work, you need to add the domain to the reCAPTCHA admin panel.
 
-Tested with Node.js v18.12.1.
+Tested with Node.js v20.11.1
