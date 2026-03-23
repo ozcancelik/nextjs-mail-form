@@ -15,7 +15,7 @@
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
     "express-handlebars": "^8.0.1",
-    "next": "^14.2.3",
+    "next": "^16.2.1",
     "nodemailer": "^7.0.12",
     "nodemailer-express-handlebars": "^6.1.2",
     "react": "^18.3.1",
