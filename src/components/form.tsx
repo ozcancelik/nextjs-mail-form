@@ -64,7 +64,7 @@ export default function Form() {
       if (response.status === 200) {
         // Handle success. You can change the message to whatever you want.
         setResult(
-          "Your message has been sent. Thank you for contacting us. We will get back to you as soon as possible."
+          "Your message has been sent. Thank you for contacting us. We will get back to you as soon as possible.",
         );
         setResultColor("text-green-500");
         // Reset the form after successful submission
@@ -87,7 +87,7 @@ export default function Form() {
             <FiUser className="w-6 h-6 absolute top-1/2 -translate-y-1/2 left-2 border-r pr-2" />
           )}
           <input
-            className={`shadow appearance-none outline-none border rounded w-full py-2 pl-10 text-gray-700 leading-tight duration-300
+            className={`shadow bg-white appearance-none outline-none border rounded w-full py-2 pl-10 text-gray-700 leading-tight duration-300
           ${errors.nameSurname?.message && "shadow-[0_0_0_2px] shadow-red-500"}
           `}
             type="text"
@@ -109,7 +109,7 @@ export default function Form() {
             <FiMail className="w-6 h-6 absolute top-1/2 -translate-y-1/2 left-2 border-r pr-2" />
           )}
           <input
-            className={`shadow appearance-none outline-none border rounded w-full py-2 pl-10 text-gray-700  leading-tight duration-300
+            className={`shadow bg-white appearance-none outline-none border rounded w-full py-2 pl-10 text-gray-700  leading-tight duration-300
           ${errors.email?.message && "shadow-[0_0_0_2px] shadow-red-500"}
           `}
             type="email"
@@ -131,7 +131,7 @@ export default function Form() {
             <FiPhone className="w-6 h-6 absolute top-1/2 -translate-y-1/2 left-2 border-r pr-2" />
           )}
           <input
-            className={`shadow appearance-none outline-none border rounded w-full py-2 pl-10 text-gray-700 leading-tight duration-300
+            className={`shadow bg-white appearance-none outline-none border rounded w-full py-2 pl-10 text-gray-700 leading-tight duration-300
           ${errors.phone?.message && "shadow-[0_0_0_2px] shadow-red-500"}
           `}
             type="tel"
@@ -147,7 +147,7 @@ export default function Form() {
       </div>
       <div className="mb-4">
         <textarea
-          className={`shadow appearance-none outline-none border rounded w-full py-2 px-3 text-gray-700 leading-tight duration-300
+          className={`shadow bg-white appearance-none outline-none border rounded w-full py-2 px-3 text-gray-700 leading-tight duration-300
           ${errors.message?.message && "shadow-[0_0_0_2px] shadow-red-500"}
           `}
           placeholder="Message"

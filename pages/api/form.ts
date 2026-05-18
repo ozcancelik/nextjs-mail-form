@@ -1,8 +1,9 @@
 
 import { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
-const path = require("path");
-const hbs = require("nodemailer-express-handlebars");
+import path from "path";
+import hbs from "nodemailer-express-handlebars";
+import { create } from "express-handlebars";
 
 interface Data {
     nameSurname: string;
@@ -13,11 +14,11 @@ interface Data {
 }
 
 const handlebarOptions = {
-    viewEngine: {
-        extName: ".handlebars",
+    viewEngine: create({
+        extname: ".handlebars",
         partialsDir: path.resolve("./src/templates/"),
-        defaultLayout: false,
-    },
+        defaultLayout: false as const,
+    }),
     viewPath: path.resolve("./src/templates/"),
     extName: ".handlebars",
 };
